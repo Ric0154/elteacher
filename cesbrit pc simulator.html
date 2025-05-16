@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Windows 11 Mockup</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      overflow: hidden;
+    }
+
+    .taskbar {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 50px;
+      background: rgba(30, 30, 30, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      border-top: 1px solid #444;
+    }
+
+    .taskbar-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .windows-logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 15px;
+      cursor: pointer;
+    }
+
+    .search-bar {
+      background: #2b2b2b;
+      border: 1px solid #555;
+      color: #ccc;
+      padding: 5px 10px;
+      border-radius: 5px;
+      width: 300px;
+    }
+
+    .taskbar-clock {
+      color: white;
+      font-size: 13px;
+      padding-right: 10px;
+    }
+
+    .system-info, .security-dashboard, .kaspersky-info {
+      position: absolute;
+      top: 60px;
+      left: 200px;
+      width: 600px;
+      background: #ffffffee;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      padding: 20px;
+      display: none;
+    }
+
+    .system-info h2,
+    .security-dashboard h2,
+    .kaspersky-info h2 {
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .specs-table {
+      font-size: 14px;
+      width: 100%;
+    }
+
+    .specs-table td {
+      padding: 5px 8px;
+      vertical-align: top;
+    }
+
+    .specs-table tr td:first-child {
+      width: 180px;
+      font-weight: bold;
+    }
+
+    .sidebar, .security-sidebar {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 180px;
+      height: 500px;
+      background: #f3f3f3;
+      border-right: 1px solid #ccc;
+      padding-top: 20px;
+      display: none;
+    }
+
+    .sidebar ul,
+    .security-sidebar ul {
+      list-style: none;
+      padding: 0 10px;
+    }
+
+    .sidebar ul li,
+    .security-sidebar ul li {
+      padding: 10px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .sidebar ul li:hover,
+    .security-sidebar ul li:hover {
+      background: #ddd;
+    }
+
+    .kaspersky-info {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Windows Settings Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><strong>System</strong></li>
+      <li>Bluetooth & devices</li>
+      <li>Network & internet</li>
+      <li>Personalisation</li>
+      <li>Apps</li>
+      <li>Accounts</li>
+      <li>Time & language</li>
+      <li>Gaming</li>
+      <li>Accessibility</li>
+      <li>Privacy & security</li>
+      <li>Windows Update</li>
+    </ul>
+  </div>
+
+  <!-- System Info Panel -->
+  <div class="system-info" id="systemInfo">
+    <h2>About your PC</h2>
+    <table class="specs-table">
+      <tr><td>Device name</td><td>Dev-Machine-Z1</td></tr>
+      <tr><td>Processor</td><td>AMD Ryzen 7 5800H with Radeon Graphics</td></tr>
+      <tr><td>Installed RAM</td><td>32.0 GB (31.8 GB usable)</td></tr>
+      <tr><td>Device ID</td><td>XYZ1-2345-FAKE-ID</td></tr>
+      <tr><td>Product ID</td><td>12345-99999-ABCDE-00001</td></tr>
+      <tr><td>System type</td><td>64-bit OS, x64-based processor</td></tr>
+      <tr><td>Pen and touch</td><td>No pen or touch input available</td></tr>
+      <tr><td colspan="2"><hr></td></tr>
+      <tr><td>Edition</td><td>Windows 11 Pro</td></tr>
+      <tr><td>Version</td><td>24H2</td></tr>
+      <tr><td>Installed on</td><td>‎13/05/2025</td></tr>
+      <tr><td>OS build</td><td>26100.560</td></tr>
+      <tr><td>Experience</td><td>Windows Feature Experience Pack 1000.26100.560.0</td></tr>
+    </table>
+  </div>
+
+  <!-- Windows Security Sidebar -->
+  <div class="security-sidebar" id="securitySidebar">
+    <ul>
+      <li><strong>Home</strong></li>
+      <li id="virusThreatBtn">Virus & threat protection</li>
+      <li>Account protection</li>
+      <li>Firewall & network protection</li>
+      <li>App & browser control</li>
+      <li>Device security</li>
+      <li>Device performance & health</li>
+      <li>Family options</li>
+      <li>Protection history</li>
+    </ul>
+  </div>
+
+  <!-- Windows Security Panel -->
+  <div class="security-dashboard" id="securityDashboard">
+    <h2>Windows Security</h2>
+    <p>Select an area to view and manage security settings.</p>
+  </div>
+
+  <!-- Fake Antivirus Info -->
+  <div class="kaspersky-info" id="kasperskyInfo">
+    <h2>Virus & Threat Protection</h2>
+    <p><strong>Antivirus:</strong> Kaspersky Total Security</p>
+    <p><strong>Status:</strong> Active and up-to-date</p>
+    <p><strong>Last scan:</strong> Today at 9:00 AM</p>
+    <p><strong>Threats found:</strong> None</p>
+    <p><strong>Virus definitions:</strong> Updated</p>
+    <p><strong>Scan schedule:</strong> Daily at 3:00 AM</p>
+  </div>
+
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <div class="taskbar-left">
+      <img class="windows-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2021.svg" alt="Windows Logo">
+    </div>
+
+    <input type="text" class="search-bar" id="searchInput" placeholder="Type here to search..." />
+
+    <div class="taskbar-clock" id="clock">12:45 PM</div>
+  </div>
+
+  <script>
+    const input = document.getElementById('searchInput');
+    const systemInfo = document.getElementById('systemInfo');
+    const securityDashboard = document.getElementById('securityDashboard');
+    const kasperskyInfo = document.getElementById('kasperskyInfo');
+    const sidebar = document.getElementById('sidebar');
+    const securitySidebar = document.getElementById('securitySidebar');
+    const virusBtn = document.getElementById('virusThreatBtn');
+    const clock = document.getElementById('clock');
+
+    input.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        const query = input.value.trim().toLowerCase();
+
+        // Hide all panels first
+        systemInfo.style.display = 'none';
+        sidebar.style.display = 'none';
+        securityDashboard.style.display = 'none';
+        securitySidebar.style.display = 'none';
+        kasperskyInfo.style.display = 'none';
+
+        if (query === 'about your pc') {
+          systemInfo.style.display = 'block';
+          sidebar.style.display = 'block';
+        }
+
+        if (query === 'windows security') {
+          securityDashboard.style.display = 'block';
+          securitySidebar.style.display = 'block';
+        }
+      }
+    });
+
+    virusBtn.addEventListener('click', function() {
+      kasperskyInfo.style.display = 'block';
+      securityDashboard.style.display = 'none';
+    });
+
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12 || 12;
+      clock.textContent = `${hours}:${minutes} ${ampm}`;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+  </script>
+
+</body>
+</html>
